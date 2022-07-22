@@ -11,6 +11,5 @@ execute_process(COMMAND
 
 # generate common.hh
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/common.hh.in" "${CMAKE_CURRENT_SOURCE_DIR}/common.hh" @ONLY)
-
 list(APPEND SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/common.hh")
 

@@ -1,4 +1,5 @@
 #pragma once
+
 #include <string>
 
 static std::string gitinfo() {

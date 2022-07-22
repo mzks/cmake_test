@@ -13,6 +13,7 @@ project(cmake_test)
 
 add_subdirectory(common)
 include_directories(common)
+
 add_subdirectory(sub1)
 add_subdirectory(sub2)
 add_custom_target(alltar DEPENDS common sub1 sub2)

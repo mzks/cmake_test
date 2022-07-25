@@ -1,10 +1,17 @@
 cmake_minimum_required(VERSION 3.13)
 
 project(sub1)
-file(GLOB sources ${PROJECT_SOURCE_DIR}/src/*.cc)
-file(GLOB headers ${PROJECT_SOURCE_DIR}/include/*.hh)
-include_directories(${PROJECT_SOURCE_DIR}/include)
-set(CMAKE_INSTALL_PREFIX .)
 
+find_package(Git)
+if(NOT Git_FOUND)
+  message("Git not found")
+endif()
+
+file(GLOB sources ${PROJECT_SOURCE_DIR}/*.cc)
+file(GLOB headers ${PROJECT_SOURCE_DIR}/*.hh)
+include_directories(${PROJECT_SOURCE_DIR}/include)
+
+add_subdirectory(../common common)
+include_directories(../common)
 add_executable(sub1 src/sub1.cc)
 install(TARGETS sub1 DESTINATION bin)

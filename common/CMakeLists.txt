@@ -10,7 +10,8 @@ project(common)
 #add_custom_target(common)
 
 # generate common.hh
-configure_file("${CMAKE_CURRENT_SOURCE_DIR}/common.hh.in" "${CMAKE_CURRENT_SOURCE_DIR}/common.hh" @ONLY)
+configure_file("${CMAKE_CURRENT_SOURCE_DIR}/common.hh.in" "${CMAKE_BINARY_DIR}/common.hh" @ONLY)
+
 
 list(APPEND SOURCES "${CMAKE_CURRENT_SOURCE_DIR}/common.hh")
 
